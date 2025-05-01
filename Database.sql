@@ -24,6 +24,7 @@ INSERT INTO Companies (Id, Name) VALUES
 (3, 'BuildCorp'),
 (4, 'SmartGears'),
 (5, 'Foodies Inc.');
+GO
 
 INSERT INTO Products (Id, Name, CompanyId) VALUES
 (1, 'Laptop Pro', 1),
@@ -36,3 +37,4 @@ INSERT INTO Products (Id, Name, CompanyId) VALUES
 (8, 'Fitness Tracker', 4),
 (9, 'Vegan Snacks', 5),
 (10, 'Energy Drink', 5);
+GO
