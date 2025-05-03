@@ -20,7 +20,7 @@ namespace api.Services
             {
                 await connection.OpenAsync();
                 using (var command = new SqlCommand(
-                    "SELECT * FROM Products WHERE CompanyId = @CompanyId", connection))
+                    "SELECT * FROM dbo.Products WHERE CompanyId = @CompanyId", connection)) 
                 {
                     command.Parameters.AddWithValue("@CompanyId", companyId);
 
@@ -46,7 +46,7 @@ namespace api.Services
             using (var connection = new SqlConnection(_connectionString))
             {
                 await connection.OpenAsync();
-                using (var command = new SqlCommand("SELECT * FROM Products WHERE Id = @Id", connection))
+                using (var command = new SqlCommand("SELECT * FROM dbo.Products WHERE Id = @Id", connection)) 
                 {
                     command.Parameters.AddWithValue("@Id", id);
 
@@ -72,7 +72,7 @@ namespace api.Services
             {
                 await connection.OpenAsync();
                 using (var command = new SqlCommand(
-                    "INSERT INTO Products (Name, CompanyId) " +
+                    "INSERT INTO dbo.Products (Name, CompanyId) " + 
                     "VALUES (@Name, @CompanyId); " +
                     "SELECT SCOPE_IDENTITY();", connection))
                 {
@@ -91,7 +91,7 @@ namespace api.Services
             {
                 await connection.OpenAsync();
                 using (var command = new SqlCommand(
-                    "UPDATE Products SET " +
+                    "UPDATE dbo.Products SET " + 
                     "Name = @Name " +
                     "WHERE Id = @Id", connection))
                 {
@@ -110,7 +110,7 @@ namespace api.Services
             {
                 await connection.OpenAsync();
                 using (var command = new SqlCommand(
-                    "DELETE FROM Products WHERE Id = @Id", connection))
+                    "DELETE FROM dbo.Products WHERE Id = @Id", connection)) 
                 {
                     command.Parameters.AddWithValue("@Id", id);
 
@@ -119,5 +119,6 @@ namespace api.Services
                 }
             }
         }
+
     }
 }

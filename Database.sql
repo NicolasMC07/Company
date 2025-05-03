@@ -1,7 +1,4 @@
-CREATE DATABASE CompanyProductDB;
-GO
-
-USE CompanyProductDB;
+CREATE DATABASE sqlserver_container;
 GO
 
 CREATE TABLE Companies (

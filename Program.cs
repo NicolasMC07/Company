@@ -18,13 +18,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseRouting();
-
-if (app.Environment.IsDevelopment())
-{
-    app.MapGet("/debug/routes", (IEnumerable<EndpointDataSource> endpointSources) =>
-        string.Join("\n", endpointSources.SelectMany(source => source.Endpoints)));
-}
 app.MapControllers();
 app.Run();
 
